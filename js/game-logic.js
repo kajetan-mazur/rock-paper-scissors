@@ -136,3 +136,14 @@ const getMoveWinner = (playerOneMoveType,playerOneMoveValue,playerTwoMoveType,pl
       return 'Player Two';
     } else { return 'Tie';}
  }
+
+ const setComputerMoves = () => {
+   const moveTypes = ['paper','rock','scissors'];
+   const moveOneType = moveTypes[Math.floor(Math.random()*3)];
+   const moveTwoType = moveTypes[Math.floor(Math.random()*3)];
+   const moveThreeType = moveTypes[Math.floor(Math.random()*3)];
+   const moveOneValue = Math.floor(Math.random()*96) + 1;
+   const moveTwoValue = Math.floor(Math.random()*(97-moveOneValue) + 1);
+   const moveThreeValue = 99 - moveOneValue - moveTwoValue;
+   setPlayerMoves('Player Two',moveOneType,moveOneValue,moveTwoType,moveTwoValue,moveThreeType,moveThreeValue);
+ }
